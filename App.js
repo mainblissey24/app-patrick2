@@ -4,6 +4,8 @@ import { useState } from "react";
 import * as ImagePicker from 'expo-image-picker';
 import Button from "./components/button";
 import ImageViewer from './components/ImageViewer';
+import CircleButton from "./components/circleButton";
+import IconButton from "./components/IconButton";
 
 const PlaceholderImage = require("./assets/images/background-image.png");
 
@@ -25,6 +27,19 @@ export default function App() {
       alert('Você não selecionou uma imagem.:(');
     }
   };
+
+  const onReset = () => {
+    setShowAppOptions(false);
+  };
+
+  const onAddSticker = () => {
+    // we will implement this later
+  };
+
+  const onSaveImageAsync = async () => {
+    // we will implement this later
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -64,5 +79,13 @@ const styles = StyleSheet.create({
   footerContainer: {
     flex: 1 / 3,
     alignItems: 'center',
+  },
+  optionsContainer: {
+    position: 'absolute',
+    bottom: 80,
+  },
+  optionsRow: {
+    alignItems: 'center',
+    flexDirection: 'row',
   },
 });
